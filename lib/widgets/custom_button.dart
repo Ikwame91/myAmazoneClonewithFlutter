@@ -23,7 +23,7 @@ class CustomMainButton extends StatelessWidget {
           backgroundColor: color,
           fixedSize: Size(screenSize.width * 0.6, 40),
         ),
-        onPressed: () {},
+        onPressed: onPressed,
         child: !isLoading
             ? child
             : const Padding(

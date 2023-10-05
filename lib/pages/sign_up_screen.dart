@@ -1,0 +1,130 @@
+import 'dart:ui' as ui;
+
+import 'package:flutter/material.dart';
+import 'package:myown_amazone_clone/utils/color_themes.dart';
+import 'package:myown_amazone_clone/utils/constants.dart';
+import 'package:myown_amazone_clone/widgets/custom_button.dart';
+import 'package:myown_amazone_clone/widgets/textfield.dart'; // Import 'dart:ui' with a different name.
+
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
+
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    nameController.dispose();
+    emailController.dispose();
+    addressController.dispose();
+    passwordController.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    ui.Size screenSize = MediaQuery.of(context).size;
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: screenSize.height,
+          width: screenSize.width,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.network(
+                    amazonLogo,
+                    height: screenSize.height * 0.10,
+                  ),
+                  SizedBox(
+                    height: screenSize.height * 0.7,
+                    child: FittedBox(
+                      child: Container(
+                        height: screenSize.height * 0.85,
+                        width: screenSize.width * 0.8,
+                        padding: const EdgeInsets.all(25),
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey, width: 1)),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'Sign Up',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w500, fontSize: 33),
+                            ),
+                            TextFieldwidget(
+                                hintText: 'Enter your name',
+                                title: 'Name',
+                                obscureText: false,
+                                controller: nameController),
+                            TextFieldwidget(
+                                hintText: 'Enter your address',
+                                title: 'Address',
+                                obscureText: false,
+                                controller: addressController),
+                            TextFieldwidget(
+                                hintText: 'Enter your email',
+                                title: 'Email',
+                                obscureText: false,
+                                controller: emailController),
+                            TextFieldwidget(
+                                hintText: 'Enter your password',
+                                title: 'Password',
+                                obscureText: false,
+                                controller: passwordController),
+                            Align(
+                              alignment: Alignment.center,
+                              child: CustomMainButton(
+                                color: yellowColor,
+                                isLoading: false,
+                                onPressed: () {},
+                                child: const Text(
+                                  'Sign In',
+                                  style: TextStyle(
+                                      letterSpacing: 0.6,
+                                      color: Colors.black,
+                                      fontSize: 16),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  CustomMainButton(
+                    color: Colors.grey[400] as Color,
+                    isLoading: false,
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text('back',
+                        style: TextStyle(
+                            fontSize: 16,
+                            letterSpacing: 0.6,
+                            color: Colors.black)),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

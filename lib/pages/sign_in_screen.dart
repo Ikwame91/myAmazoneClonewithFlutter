@@ -3,6 +3,7 @@
 import 'dart:ui' as ui; // Import 'dart:ui' with a different name.
 
 import 'package:flutter/material.dart';
+import 'package:myown_amazone_clone/pages/sign_up_screen.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
 import 'package:myown_amazone_clone/utils/constants.dart';
 import 'package:myown_amazone_clone/widgets/custom_button.dart';
@@ -30,6 +31,7 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     ui.Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: SizedBox(
           height: screenSize.height,
@@ -69,8 +71,8 @@ class _SignInScreenState extends State<SignInScreen> {
                         TextFieldwidget(
                             hintText: 'Enter your password',
                             title: 'Password',
-                            obscureText: false,
-                            controller: emailController),
+                            obscureText: true,
+                            controller: passwordController),
                         Align(
                           alignment: Alignment.center,
                           child: CustomMainButton(
@@ -112,7 +114,12 @@ class _SignInScreenState extends State<SignInScreen> {
                   CustomMainButton(
                     color: Colors.grey[400] as Color,
                     isLoading: false,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const SignUpScreen();
+                      }));
+                    },
                     child: Text('Create an Account with Nkays Amazon Clone',
                         style: TextStyle(
                             fontSize: 16,
