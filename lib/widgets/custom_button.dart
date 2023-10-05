@@ -19,10 +19,21 @@ class CustomMainButton extends StatelessWidget {
     ui.Size screenSize = MediaQuery.of(context).size;
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
+          alignment: Alignment.center,
           backgroundColor: color,
-          fixedSize: Size(screenSize.width * 0.5, 40),
+          fixedSize: Size(screenSize.width * 0.6, 40),
         ),
         onPressed: () {},
-        child: child);
+        child: !isLoading
+            ? child
+            : const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: AspectRatio(
+                  aspectRatio: 1 / 1,
+                  child: CircularProgressIndicator(
+                    color: Colors.white,
+                  ),
+                ),
+              ));
   }
 }
