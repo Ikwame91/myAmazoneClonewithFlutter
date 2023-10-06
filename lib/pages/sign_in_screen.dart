@@ -1,11 +1,13 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, use_build_context_synchronously
 
 import 'dart:ui' as ui; // Import 'dart:ui' with a different name.
 
 import 'package:flutter/material.dart';
+import 'package:myown_amazone_clone/Authentications/authentication_method.dart';
 import 'package:myown_amazone_clone/pages/sign_up_screen.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
 import 'package:myown_amazone_clone/utils/constants.dart';
+import 'package:myown_amazone_clone/utils/utils.dart';
 import 'package:myown_amazone_clone/widgets/custom_button.dart';
 import 'package:myown_amazone_clone/widgets/textfield.dart';
 
@@ -19,6 +21,7 @@ class SignInScreen extends StatefulWidget {
 class _SignInScreenState extends State<SignInScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  AuthenticationMethods authenticationMethods = AuthenticationMethods();
 
   @override
   void dispose() {
@@ -78,7 +81,18 @@ class _SignInScreenState extends State<SignInScreen> {
                           child: CustomMainButton(
                             color: yellowColor,
                             isLoading: false,
-                            onPressed: () {},
+                            onPressed: () async {
+                              String output =
+                                  await authenticationMethods.signInUser(
+                                      email: emailController.text,
+                                      password: passwordController.text);
+                              if (output == 'success') {
+                                //function
+                              } else {
+                                Utils().showSnackBar(
+                                    context: context, content: output);
+                              }
+                            },
                             child: Text(
                               'Sign In',
                               style: TextStyle(
@@ -115,7 +129,9 @@ class _SignInScreenState extends State<SignInScreen> {
                     color: Colors.grey[400] as Color,
                     isLoading: false,
                     onPressed: () {
-                      Navigator.push(context,
+                      //push replacement---> The new screen isn'nt going to be on top of the
+                      //previous screen but its going to replace the current screen
+                      Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) {
                         return const SignUpScreen();
                       }));

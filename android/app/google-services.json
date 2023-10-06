@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "106133232622",
+    "project_id": "myeclone-3867f",
+    "storage_bucket": "myeclone-3867f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106133232622:android:d73717c26be74b1ccc0cff",
+        "android_client_info": {
+          "package_name": "kwames.app.myown_amazone_clone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkhqaBaAIXMKJZGsf3ZlMtXAwfvCMYeCc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

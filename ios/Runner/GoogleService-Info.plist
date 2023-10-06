@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyDc7kuGJyJFBv7wsOxko-Zfcfxd1WSMHpw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>106133232622</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>kwames.app.myownAmazoneClone</string>
+	<key>PROJECT_ID</key>
+	<string>myeclone-3867f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>myeclone-3867f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:106133232622:ios:14321ef3912a23fbcc0cff</string>
+</dict>
+</plist>

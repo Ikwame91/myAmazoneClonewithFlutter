@@ -1,8 +1,12 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
+import 'package:myown_amazone_clone/Authentications/authentication_method.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
 import 'package:myown_amazone_clone/utils/constants.dart';
+import 'package:myown_amazone_clone/utils/utils.dart';
 import 'package:myown_amazone_clone/widgets/custom_button.dart';
 import 'package:myown_amazone_clone/widgets/textfield.dart'; // Import 'dart:ui' with a different name.
 
@@ -18,7 +22,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController addressController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
+  AuthenticationMethods authenticationMethods = AuthenticationMethods();
   @override
   void dispose() {
     super.dispose();
@@ -85,16 +89,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             TextFieldwidget(
                                 hintText: 'Enter your password',
                                 title: 'Password',
-                                obscureText: false,
+                                obscureText: true,
                                 controller: passwordController),
                             Align(
                               alignment: Alignment.center,
                               child: CustomMainButton(
                                 color: yellowColor,
                                 isLoading: false,
-                                onPressed: () {},
+                                onPressed: () async {
+                                  String output =
+                                      await authenticationMethods.signUpUser(
+                                          name: nameController.text,
+                                          address: addressController.text,
+                                          email: emailController.text,
+                                          password: passwordController.text);
+
+                                  if (output == 'success') {
+                                    //function
+                                  } else {
+                                    Utils().showSnackBar(
+                                        context: context, content: output);
+                                  }
+                                },
                                 child: const Text(
-                                  'Sign In',
+                                  'Sign Up',
                                   style: TextStyle(
                                       letterSpacing: 0.6,
                                       color: Colors.black,
@@ -111,7 +129,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     color: Colors.grey[400] as Color,
                     isLoading: false,
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const SignUpScreen();
+                      }));
                     },
                     child: const Text('back',
                         style: TextStyle(

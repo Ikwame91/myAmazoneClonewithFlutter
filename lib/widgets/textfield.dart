@@ -67,6 +67,7 @@ class _TextFieldState extends State<TextFieldwidget> {
           decoration:
               BoxDecoration(boxShadow: [isInFocus ? boxShadow : boxShadow2]),
           child: TextField(
+            controller: widget.controller,
             focusNode: focusNode,
             obscureText: widget.obscureText,
             maxLines: 1,
