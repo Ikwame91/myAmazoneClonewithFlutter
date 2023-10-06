@@ -4,6 +4,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:myown_amazone_clone/Authentications/authentication_method.dart';
+import 'package:myown_amazone_clone/pages/sign_in_screen.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
 import 'package:myown_amazone_clone/utils/constants.dart';
 import 'package:myown_amazone_clone/utils/utils.dart';
@@ -131,7 +132,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onPressed: () {
                       Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) {
-                        return const SignUpScreen();
+                        return const SignInScreen();
                       }));
                     },
                     child: const Text('back',

@@ -53,7 +53,6 @@ class AmazonClone extends StatelessWidget {
                 );
                 //user has signed in at some point in time before and credentials is still there
               } else if (user.hasData) {
-                FirebaseAuth.instance.signOut;
                 return Text('Signed In Already');
               } else {
                 //if user hasnt then we show sign in screen
@@ -62,3 +61,6 @@ class AmazonClone extends StatelessWidget {
             }));
   }
 }
+
+
+//Cloud firestore allows to read and writr data time in real time

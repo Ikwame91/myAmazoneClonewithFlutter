@@ -5,11 +5,13 @@ class Utils {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
           backgroundColor: Colors.orange,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10),
-                  topRight: Radius.circular(radius))),
-          content: Text(content)),
+                  topLeft: Radius.circular(10), topRight: Radius.circular(10))),
+          content: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [Text(content)],
+          )),
     );
   }
 }
