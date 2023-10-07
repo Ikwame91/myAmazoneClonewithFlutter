@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:myown_amazone_clone/firebase_options.dart';
+import 'package:myown_amazone_clone/layouts_for%20screens/screen_layout.dart';
 import 'package:myown_amazone_clone/pages/sign_in_screen.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
 
@@ -53,9 +54,9 @@ class AmazonClone extends StatelessWidget {
                 );
                 //user has signed in at some point in time before and credentials is still there
               } else if (user.hasData) {
-                return Text('Signed In Already');
+                return ScreenLayout();
               } else {
-                //if user hasnt then we show sign in screen
+                //if user hasn't then we show sign in screen
                 return SignInScreen();
               }
             }));
@@ -63,4 +64,4 @@ class AmazonClone extends StatelessWidget {
 }
 
 
-//Cloud firestore allows to read and writr data time in real time
+//Cloud firestore allows to read and write data time in real time
