@@ -81,26 +81,29 @@ class _BannerScrollWidgetState extends State<BannerScrollWidget> {
               height: bannerContainerHeight,
               width: screenSize.width,
               color: backgroundColor,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  getSmallAdWidget(
-                    index: 0,
-                    side: bannerContainerHeight,
-                  ),
-                  getSmallAdWidget(
-                    index: 1,
-                    side: bannerContainerHeight,
-                  ),
-                  getSmallAdWidget(
-                    index: 2,
-                    side: bannerContainerHeight,
-                  ),
-                  getSmallAdWidget(
-                    index: 3,
-                    side: bannerContainerHeight,
-                  ),
-                ],
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    getSmallAdWidget(
+                      index: 0,
+                      side: bannerContainerHeight,
+                    ),
+                    getSmallAdWidget(
+                      index: 1,
+                      side: bannerContainerHeight,
+                    ),
+                    getSmallAdWidget(
+                      index: 2,
+                      side: bannerContainerHeight,
+                    ),
+                    getSmallAdWidget(
+                      index: 3,
+                      side: bannerContainerHeight,
+                    ),
+                  ],
+                ),
               ),
             )
           ],
@@ -133,7 +136,9 @@ class _BannerScrollWidgetState extends State<BannerScrollWidget> {
                   bannerContainer[index],
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(
+                    top: 10,
+                  ),
                   child: Text(
                     adItemNames[index],
                     style: const TextStyle(
