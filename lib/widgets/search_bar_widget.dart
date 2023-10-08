@@ -1,5 +1,6 @@
 import 'dart:ui' as ui; // Import 'dart:ui' with a different name.
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:myown_amazone_clone/pages/search_screen.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
@@ -13,6 +14,12 @@ class SearchBarWidget extends StatelessWidget implements PreferredSizeWidget {
       : super(key: key);
   @override
   Size get preferredSize => const Size.fromHeight(kAppBarHeight);
+  Future<void> _signOut(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    // Optionally, you can navigate to a different screen after signing out.
+    // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => YourSignInScreen()));
+  }
+
   @override
   Widget build(BuildContext context) {
     ui.Size screenSize = MediaQuery.of(context).size;
@@ -79,7 +86,14 @@ class SearchBarWidget extends StatelessWidget implements PreferredSizeWidget {
                 ),
               )),
           IconButton(
-              onPressed: () {}, icon: const Icon(Icons.mic_none_outlined))
+              onPressed: () {}, icon: const Icon(Icons.mic_none_outlined)),
+          IconButton(
+            onPressed: () {
+              _signOut(
+                  context); // Call the sign-out function when the button is pressed
+            },
+            icon: const Icon(Icons.logout), // Add your logout icon here
+          ),
         ],
       ),
     );

@@ -12,13 +12,28 @@ class FirstCategoryHorizontalScroll extends StatelessWidget {
       color: Colors.white,
       child: ListView.builder(
           itemCount: categoriesList.length,
+          scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return Column(
-              children: [
-                CircleAvatar(
-                  backgroundImage: NetworkImage(categoriesList[index]),
-                )
-              ],
+            return GestureDetector(
+              onTap: () {},
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      CircleAvatar(
+                        backgroundImage: NetworkImage(categoryLogos[index]),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: Text(categoriesList[index]),
+                      )
+                    ],
+                  ),
+                ),
+              ),
             );
           }),
     );

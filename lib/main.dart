@@ -31,6 +31,10 @@ void main() async {
 
 class AmazonClone extends StatelessWidget {
   const AmazonClone({super.key});
+  // Function to sign out the user
+  Future<void> signOutUser() async {
+    await FirebaseAuth.instance.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
