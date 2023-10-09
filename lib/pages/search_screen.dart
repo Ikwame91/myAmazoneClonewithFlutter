@@ -8,7 +8,11 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SafeArea(
       child: Scaffold(
-        appBar: SearchBarWidget(isReadOnly: false, hasBackButon: true),
+        appBar: SearchBarWidget(
+          isReadOnly: false,
+          hasBackButon: true,
+          showSignOutIcon: false,
+        ),
       ),
     );
   }

@@ -8,9 +8,13 @@ import 'package:myown_amazone_clone/utils/constants.dart';
 
 class SearchBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final bool isReadOnly;
+  final bool showSignOutIcon;
   final bool hasBackButon;
   const SearchBarWidget(
-      {Key? key, required this.isReadOnly, required this.hasBackButon})
+      {Key? key,
+      required this.isReadOnly,
+      required this.hasBackButon,
+      required this.showSignOutIcon})
       : super(key: key);
   @override
   Size get preferredSize => const Size.fromHeight(kAppBarHeight);
@@ -87,13 +91,15 @@ class SearchBarWidget extends StatelessWidget implements PreferredSizeWidget {
               )),
           IconButton(
               onPressed: () {}, icon: const Icon(Icons.mic_none_outlined)),
-          IconButton(
-            onPressed: () {
-              _signOut(
-                  context); // Call the sign-out function when the button is pressed
-            },
-            icon: const Icon(Icons.logout), // Add your logout icon here
-          ),
+          showSignOutIcon
+              ? IconButton(
+                  onPressed: () {
+                    _signOut(
+                        context); // Call the sign-out function when the button is pressed
+                  },
+                  icon: const Icon(Icons.logout), // Add your logout icon here
+                )
+              : Container()
         ],
       ),
     );

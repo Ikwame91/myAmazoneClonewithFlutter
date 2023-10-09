@@ -81,6 +81,11 @@ class _BannerScrollWidgetState extends State<BannerScrollWidget> {
               height: bannerContainerHeight,
               width: screenSize.width,
               color: backgroundColor,
+
+              //Renderflex error was as a result of not adding a single child scrollview to the row
+              //  child: SingleChildScrollView(
+              //   scrollDirection: Axis.horizontal,
+              //   child: Row(
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -90,17 +95,29 @@ class _BannerScrollWidgetState extends State<BannerScrollWidget> {
                       index: 0,
                       side: bannerContainerHeight,
                     ),
+                    const SizedBox(
+                      width: 10,
+                    ),
                     getSmallAdWidget(
                       index: 1,
                       side: bannerContainerHeight,
+                    ),
+                    const SizedBox(
+                      width: 10,
                     ),
                     getSmallAdWidget(
                       index: 2,
                       side: bannerContainerHeight,
                     ),
+                    const SizedBox(
+                      width: 10,
+                    ),
                     getSmallAdWidget(
                       index: 3,
                       side: bannerContainerHeight,
+                    ),
+                    const SizedBox(
+                      width: 10,
                     ),
                   ],
                 ),
