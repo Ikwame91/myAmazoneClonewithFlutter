@@ -14,12 +14,12 @@ class ProductShowCaseListView extends StatelessWidget {
   Widget build(BuildContext context) {
     // Calculate a reasonable default height based on the screen height
     ui.Size screenSize = MediaQuery.of(context).size;
-    double defaultHeight = screenSize.height * 0.4;
+    double defaultHeight = screenSize.height * 0.5;
     return SizedBox(
       height: defaultHeight,
       child: GridView.builder(
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: 10,
+          itemCount: 4,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2),
           itemBuilder: (context, index) {
