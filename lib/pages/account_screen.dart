@@ -1,9 +1,10 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_local_variable
 
 import 'package:flutter/material.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
 import 'package:myown_amazone_clone/utils/constants.dart';
 import 'package:myown_amazone_clone/widgets/account_screen_buttons.dart';
+import 'package:myown_amazone_clone/widgets/account_screen_custom_container.dart';
 import 'package:myown_amazone_clone/widgets/accountscreenappbar.dart';
 
 class AccountScreen extends StatefulWidget {
@@ -31,11 +32,9 @@ class _AccountScreenState extends State<AccountScreen> {
         child: Scaffold(
             backgroundColor: Colors.white,
             appBar: const AccountScreenAppbar(),
-            body: SingleChildScrollView(
-              child: SizedBox(
-                height: screenSize.height,
-                width: screenSize.width,
-                child: Column(
+            body: ListView(
+              children: [
+                Column(
                   children: const [
                     IntroductoryWidgetAccountScreen(),
                     Column(
@@ -55,7 +54,7 @@ class _AccountScreenState extends State<AccountScreen> {
                               height: 80,
                             ),
                             AccountScreenButton(
-                              text: 'Your list',
+                              text: 'Buy Again',
                             ),
                           ],
                         ),
@@ -74,15 +73,69 @@ class _AccountScreenState extends State<AccountScreen> {
                               height: 80,
                             ),
                             AccountScreenButton(
-                              text: 'Your orders',
+                              text: 'Your Lists',
                             ),
                           ],
                         ),
                       ],
                     ),
+                    CustomContainer(
+                      text: 'Your Orders',
+                      subText: 'See all',
+                      notice: 'Hmm. We couldn\'t find any others',
+                      containerText: 'Continue Shopping',
+                    ),
+                    CustomContainer(
+                      text: 'Keep Shopping For',
+                      subText: 'See all',
+                      notice: 'Hmm. We couldn\'t find any others',
+                      containerText: 'Continue Shopping',
+                    ),
+                    CustomContainer(
+                      text: 'Buy Again',
+                      subText: 'See all',
+                      notice: 'Hmm. We couldn\'t find any others',
+                      containerText: 'Continue Shopping',
+                    ),
+                    CustomContainer(
+                      text: 'Your Orders',
+                      subText: 'See all',
+                      notice: 'Hmm. We couldn\'t find any others',
+                      containerText: 'Continue Shopping',
+                    ),
+                    CustomContainer(
+                      text: 'Your Lists',
+                      subText: 'See all',
+                      notice: 'Hmm. We couldn\'t find any others',
+                      containerText: 'Continue Shopping',
+                    ),
+                    CustomContainer(
+                      text: 'Your Accounts',
+                      subText: 'See all',
+                      notice: 'Hmm. We couldn\'t find any others',
+                      containerText: 'Continue Shopping',
+                    ),
+                    CustomContainer(
+                      text: 'Gift Card Balance',
+                      subText: 'See all',
+                      notice: 'Hmm. We couldn\'t find any others',
+                      containerText: 'Continue Shopping',
+                    ),
+                    CustomContainer(
+                      text: 'Your Orders',
+                      subText: 'See all',
+                      notice: 'Hmm. We couldn\'t find any others',
+                      containerText: 'Continue Shopping',
+                    ),
+                    CustomContainer(
+                      text: 'Your Orders',
+                      subText: 'See all',
+                      notice: 'Hmm. We couldn\'t find any others',
+                      containerText: 'Continue Shopping',
+                    )
                   ],
                 ),
-              ),
+              ],
             )),
       ),
     );

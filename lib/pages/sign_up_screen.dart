@@ -20,7 +20,7 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   // Function to dismiss the keyboard
-  void dismissKeyboard() {
+  void dismissKeyboard(BuildContext context) {
     FocusScope.of(context).unfocus(); // This will dismiss the keyboard
   }
 
@@ -42,121 +42,127 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     ui.Size screenSize = MediaQuery.of(context).size;
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: SizedBox(
-          height: screenSize.height,
-          width: screenSize.width,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Image.network(
-                    amazonLogo,
-                    height: screenSize.height * 0.10,
-                  ),
-                  SizedBox(
-                    height: screenSize.height * 0.7,
-                    child: FittedBox(
-                      child: Container(
-                        height: screenSize.height * 0.85,
-                        width: screenSize.width * 0.8,
-                        padding: const EdgeInsets.all(25),
-                        decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey, width: 1)),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              'Sign Up',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w500, fontSize: 33),
-                            ),
-                            TextFieldwidget(
-                                hintText: 'Enter your name',
-                                title: 'Name',
-                                obscureText: false,
-                                controller: nameController),
-                            TextFieldwidget(
-                                hintText: 'Enter your address',
-                                title: 'Address',
-                                obscureText: false,
-                                controller: addressController),
-                            TextFieldwidget(
-                                hintText: 'Enter your email',
-                                title: 'Email',
-                                obscureText: false,
-                                controller: emailController),
-                            TextFieldwidget(
-                                hintText: 'Enter your password',
-                                title: 'Password',
-                                obscureText: true,
-                                controller: passwordController),
-                            Align(
-                              alignment: Alignment.center,
-                              child: CustomMainButton(
-                                color: yellowColor,
-                                isLoading: isLoading,
-                                onPressed: () async {
-                                  setState(() {
-                                    isLoading = true;
-                                  });
-                                  String output =
-                                      await authenticationMethods.signUpUser(
-                                          name: nameController.text,
-                                          address: addressController.text,
-                                          email: emailController.text,
-                                          password: passwordController.text);
-                                  isLoading = false;
-
-                                  if (output == 'success') {
-                                    //function
-                                    Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (_) =>
-                                                const SignInScreen()));
-                                  } else {
-                                    Utils().showSnackBar(
-                                        context: context, content: output);
-                                  }
-                                },
-                                child: const Text(
-                                  'Sign Up',
-                                  style: TextStyle(
-                                      letterSpacing: 0.6,
-                                      color: Colors.black,
-                                      fontSize: 16),
-                                ),
+    return GestureDetector(
+      // Wrap the entire screen with GestureDetector
+      onTap: () {
+        dismissKeyboard(context); // Call the function to dismiss the keyboard
+      },
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: SingleChildScrollView(
+          child: SizedBox(
+            height: screenSize.height,
+            width: screenSize.width,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.network(
+                      amazonLogo,
+                      height: screenSize.height * 0.10,
+                    ),
+                    SizedBox(
+                      height: screenSize.height * 0.7,
+                      child: FittedBox(
+                        child: Container(
+                          height: screenSize.height * 0.85,
+                          width: screenSize.width * 0.8,
+                          padding: const EdgeInsets.all(25),
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey, width: 1)),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'Sign Up',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500, fontSize: 33),
                               ),
-                            )
-                          ],
+                              TextFieldwidget(
+                                  hintText: 'Enter your name',
+                                  title: 'Name',
+                                  obscureText: false,
+                                  controller: nameController),
+                              TextFieldwidget(
+                                  hintText: 'Enter your address',
+                                  title: 'Address',
+                                  obscureText: false,
+                                  controller: addressController),
+                              TextFieldwidget(
+                                  hintText: 'Enter your email',
+                                  title: 'Email',
+                                  obscureText: false,
+                                  controller: emailController),
+                              TextFieldwidget(
+                                  hintText: 'Enter your password',
+                                  title: 'Password',
+                                  obscureText: true,
+                                  controller: passwordController),
+                              Align(
+                                alignment: Alignment.center,
+                                child: CustomMainButton(
+                                  color: yellowColor,
+                                  isLoading: isLoading,
+                                  onPressed: () async {
+                                    setState(() {
+                                      isLoading = true;
+                                    });
+                                    String output =
+                                        await authenticationMethods.signUpUser(
+                                            name: nameController.text,
+                                            address: addressController.text,
+                                            email: emailController.text,
+                                            password: passwordController.text);
+                                    isLoading = false;
+
+                                    if (output == 'success') {
+                                      //function
+                                      Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (_) =>
+                                                  const SignInScreen()));
+                                    } else {
+                                      Utils().showSnackBar(
+                                          context: context, content: output);
+                                    }
+                                  },
+                                  child: const Text(
+                                    'Sign Up',
+                                    style: TextStyle(
+                                        letterSpacing: 0.6,
+                                        color: Colors.black,
+                                        fontSize: 16),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  CustomMainButton(
-                    color: Colors.grey[400] as Color,
-                    isLoading: false,
-                    onPressed: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) {
-                        return const SignInScreen();
-                      }));
-                    },
-                    child: const Text('back',
-                        style: TextStyle(
-                            fontSize: 16,
-                            letterSpacing: 0.6,
-                            color: Colors.black)),
-                  ),
-                ],
+                    CustomMainButton(
+                      color: Colors.grey[400] as Color,
+                      isLoading: false,
+                      onPressed: () {
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const SignInScreen();
+                        }));
+                      },
+                      child: const Text('back',
+                          style: TextStyle(
+                              fontSize: 16,
+                              letterSpacing: 0.6,
+                              color: Colors.black)),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
