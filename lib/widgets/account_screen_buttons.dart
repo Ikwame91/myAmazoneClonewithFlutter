@@ -29,10 +29,10 @@ class _AccountScreenButtonState extends State<AccountScreenButton> {
             width: screenSize.width / 2.25,
             height: 60,
             decoration: BoxDecoration(
-              color: isSelected ? Colors.grey[300] as Color : Colors.white,
+              color: isSelected ? Colors.grey[100] as Color : Colors.white,
               borderRadius: BorderRadius.circular(50),
               border: Border.all(
-                color: isSelected ? Colors.grey[300] as Color : Colors.grey,
+                color: isSelected ? Colors.grey[100] as Color : Colors.grey,
                 width: 2,
               ),
             ),

@@ -14,66 +14,77 @@ class AccountScreen extends StatefulWidget {
 }
 
 class _AccountScreenState extends State<AccountScreen> {
+  // Function to dismiss the keyboard
+  void dismissKeyboard(BuildContext context) {
+    FocusScope.of(context).unfocus(); // This will dismiss the keyboard
+  }
+
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     return SafeArea(
-      child: Scaffold(
-          backgroundColor: Colors.white,
-          appBar: const AccountScreenAppbar(),
-          body: SingleChildScrollView(
-            child: SizedBox(
-              height: screenSize.height,
-              width: screenSize.width,
-              child: Column(
-                children: const [
-                  IntroductoryWidgetAccountScreen(),
-                  Column(
-                    children: [
-                      Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 15),
-                            child: AccountScreenButton(
+      child: GestureDetector(
+        // Wrap the entire screen with GestureDetector
+        onTap: () {
+          dismissKeyboard(context); // Call the function to dismiss the keyboard
+        },
+        child: Scaffold(
+            backgroundColor: Colors.white,
+            appBar: const AccountScreenAppbar(),
+            body: SingleChildScrollView(
+              child: SizedBox(
+                height: screenSize.height,
+                width: screenSize.width,
+                child: Column(
+                  children: const [
+                    IntroductoryWidgetAccountScreen(),
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(left: 15),
+                              child: AccountScreenButton(
+                                text: 'Your orders',
+                              ),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            SizedBox(
+                              height: 80,
+                            ),
+                            AccountScreenButton(
+                              text: 'Your list',
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(left: 15),
+                              child: AccountScreenButton(
+                                text: 'Your Account',
+                              ),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            SizedBox(
+                              height: 80,
+                            ),
+                            AccountScreenButton(
                               text: 'Your orders',
                             ),
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          SizedBox(
-                            height: 80,
-                          ),
-                          AccountScreenButton(
-                            text: 'Your list',
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 15),
-                            child: AccountScreenButton(
-                              text: 'Your Account',
-                            ),
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          SizedBox(
-                            height: 80,
-                          ),
-                          AccountScreenButton(
-                            text: 'Your orders',
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          )),
+            )),
+      ),
     );
   }
 }

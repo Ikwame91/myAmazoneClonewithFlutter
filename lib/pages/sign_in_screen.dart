@@ -19,6 +19,11 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  // Function to dismiss the keyboard
+  void dismissKeyboard() {
+    FocusScope.of(context).unfocus(); // This will dismiss the keyboard
+  }
+
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   AuthenticationMethods authenticationMethods = AuthenticationMethods();

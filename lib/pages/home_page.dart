@@ -17,6 +17,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  // Function to dismiss the keyboard
+  void dismissKeyboard(BuildContext context) {
+    FocusScope.of(context).unfocus(); // This will dismiss the keyboard
+  }
+
   ScrollController controller = ScrollController();
   double offset = 0;
 
@@ -40,115 +45,122 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-          appBar: SearchBarWidget(
-            //not actually to type into the textfield
-            isReadOnly: true,
-            hasBackButon: false, showSignOutIcon: true,
-          ),
-          body: Stack(
-            children: [
-              SingleChildScrollView(
-                controller: controller,
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: kAppBarHeight / 2,
-                    ),
-                    FirstCategoryHorizontalScroll(),
-                    BannerScrollWidget(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 10, top: 15),
-                          child: Text(
-                            'Deals related to items in your cart',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w900,
-                                color: Colors.black,
-                                fontSize: 20),
+      child: GestureDetector(
+        // Wrap the entire screen with GestureDetector
+        onTap: () {
+          dismissKeyboard(context); // Call the function to dismiss the keyboard
+        },
+        child: Scaffold(
+            appBar: SearchBarWidget(
+              //not actually to type into the textfield
+              isReadOnly: true,
+              hasBackButon: false, showSignOutIcon: true,
+            ),
+            body: Stack(
+              children: [
+                SingleChildScrollView(
+                  controller: controller,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: kAppBarHeight / 2,
+                      ),
+                      FirstCategoryHorizontalScroll(),
+                      BannerScrollWidget(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(left: 10, top: 15),
+                            child: Text(
+                              'Deals related to items in your cart',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.black,
+                                  fontSize: 20),
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    ProductShowCaseListView(children: []),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 10, top: 15),
-                          child: Text(
-                            'Deals related to items in your cart',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w900,
-                                color: Colors.black,
-                                fontSize: 20),
+                        ],
+                      ),
+                      ProductShowCaseListView(children: []),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(left: 10, top: 15),
+                            child: Text(
+                              'Deals related to items in your cart',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.black,
+                                  fontSize: 20),
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    ProductShowCaseListView(children: []),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 10, top: 15),
-                          child: Text(
-                            'Deals related to items in your cart',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w900,
-                                color: Colors.black,
-                                fontSize: 20),
+                        ],
+                      ),
+                      ProductShowCaseListView(children: []),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(left: 10, top: 15),
+                            child: Text(
+                              'Deals related to items in your cart',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.black,
+                                  fontSize: 20),
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    ProductShowCaseListView(children: []),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 10, top: 15),
-                          child: Text(
-                            'Deals related to items in your cart',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w900,
-                                color: Colors.black,
-                                fontSize: 20),
+                        ],
+                      ),
+                      ProductShowCaseListView(children: []),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(left: 10, top: 15),
+                            child: Text(
+                              'Deals related to items in your cart',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.black,
+                                  fontSize: 20),
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    ProductShowCaseListView(children: []),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 10, top: 15),
-                          child: Text(
-                            'Deals related to items in your cart',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w900,
-                                color: Colors.black,
-                                fontSize: 20),
+                        ],
+                      ),
+                      ProductShowCaseListView(children: []),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(left: 10, top: 15),
+                            child: Text(
+                              'Deals related to items in your cart',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.black,
+                                  fontSize: 20),
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    ProductShowCaseListView(children: []),
-                    SizedBox(
-                      height: 20,
-                    ),
-                  ],
+                        ],
+                      ),
+                      ProductShowCaseListView(children: []),
+                      SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              UserDetails(
-                offset: offset,
-                userDetails: UserDetailsModel(name: 'Nkay', address: 'Kumasi'),
-              )
-            ],
-          )),
+                UserDetails(
+                  offset: offset,
+                  userDetails:
+                      UserDetailsModel(name: 'Nkay', address: 'Kumasi'),
+                )
+              ],
+            )),
+      ),
     );
   }
 }

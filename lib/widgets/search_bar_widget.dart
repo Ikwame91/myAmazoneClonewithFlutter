@@ -16,6 +16,11 @@ class SearchBarWidget extends StatelessWidget implements PreferredSizeWidget {
       required this.hasBackButon,
       required this.showSignOutIcon})
       : super(key: key);
+  // Function to dismiss the keyboard
+  void dismissKeyboard(BuildContext context) {
+    FocusScope.of(context).unfocus(); // This will dismiss the keyboard
+  }
+
   @override
   Size get preferredSize => const Size.fromHeight(kAppBarHeight);
   Future<void> _signOut(BuildContext context) async {
