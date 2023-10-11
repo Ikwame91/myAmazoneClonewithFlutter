@@ -135,9 +135,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   child: const Text(
                                     'Sign Up',
                                     style: TextStyle(
+                                        fontWeight: FontWeight.bold,
                                         letterSpacing: 0.6,
                                         color: Colors.black,
-                                        fontSize: 16),
+                                        fontSize: 17),
                                   ),
                                 ),
                               )
@@ -157,6 +158,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       },
                       child: const Text('back',
                           style: TextStyle(
+                              fontWeight: FontWeight.bold,
                               fontSize: 16,
                               letterSpacing: 0.6,
                               color: Colors.black)),

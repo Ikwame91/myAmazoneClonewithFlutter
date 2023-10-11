@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
 import 'package:myown_amazone_clone/widgets/cart_screen_appbar.dart';
+import 'package:myown_amazone_clone/widgets/cart_screen_secondwidget.dart';
 import 'package:myown_amazone_clone/widgets/cart_screen_widget.dart';
 
 class CartScreen extends StatefulWidget {
@@ -55,7 +56,8 @@ class _CartScreenState extends State<CartScreen> {
                         Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(left: 15, top: 10),
+                              padding: const EdgeInsets.only(
+                                  left: 15, top: 10, bottom: 15),
                               child: Text(
                                 'Deselect all items',
                                 style: TextStyle(
@@ -66,7 +68,8 @@ class _CartScreenState extends State<CartScreen> {
                               ),
                             ),
                           ],
-                        )
+                        ),
+                        CartScreenSecondWidget(),
                       ],
                     ),
                   ],

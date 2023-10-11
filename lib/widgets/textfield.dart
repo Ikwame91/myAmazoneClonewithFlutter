@@ -75,6 +75,7 @@ class _TextFieldState extends State<TextFieldwidget> {
                 fillColor: Colors.white,
                 filled: true,
                 hintText: widget.hintText,
+                hintStyle: TextStyle(fontWeight: FontWeight.bold),
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(4),
                     borderSide: BorderSide(color: Colors.grey, width: 1)),
