@@ -12,41 +12,13 @@ class CartScreenWidget extends StatelessWidget {
     Size screenSize = MediaQuery.of(context).size;
     return SingleChildScrollView(
       physics: NeverScrollableScrollPhysics(),
-      child: Container(
-        height: screenSize.height,
-        width: screenSize.width,
-        decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border(
-                bottom: BorderSide(
-              color: Colors.grey,
-              width: 4,
-            ))),
-        child: Column(
-          children: [
-            firstcontainerofcartscreen(screenSize: screenSize),
-            Container(
-              height: screenSize.height / 2,
-              width: screenSize.width,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border(
-                  bottom: BorderSide(
-                    color: Colors.grey,
-                    width: 4,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+      child: FirstContainerOfCartScreen(screenSize: screenSize),
     );
   }
 }
 
-class firstcontainerofcartscreen extends StatelessWidget {
-  const firstcontainerofcartscreen({
+class FirstContainerOfCartScreen extends StatelessWidget {
+  const FirstContainerOfCartScreen({
     super.key,
     required this.screenSize,
   });
@@ -63,7 +35,7 @@ class firstcontainerofcartscreen extends StatelessWidget {
         border: Border(
           bottom: BorderSide(
             color: Colors.grey,
-            width: 4,
+            width: 10,
           ),
         ),
       ),
@@ -87,14 +59,14 @@ class firstcontainerofcartscreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
+            padding: const EdgeInsets.only(top: 22, left: 10, right: 10),
             child: CartScreenCustomContainer(
                 containerText: 'Proceed to checkout (n) items'),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 10,
-              vertical: 22,
+              vertical: 23,
             ),
             child: Row(
               children: [
@@ -103,10 +75,10 @@ class firstcontainerofcartscreen extends StatelessWidget {
                   child: Text(
                     'Send as a gift Include Custom Message',
                     style: TextStyle(
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.bold,
+                        letterSpacing: 0.4,
+                        fontWeight: FontWeight.w500,
                         color: Colors.black,
-                        fontSize: 17),
+                        fontSize: 18),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -190,8 +162,11 @@ class Subtotal extends StatelessWidget {
         Transform.translate(
           offset: const Offset(0, -5),
           child: Text(
-            '\$,',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            '\$',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 17,
+            ),
           ),
         ),
         Text(
