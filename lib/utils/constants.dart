@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myown_amazone_clone/pages/Account_screen.dart';
+import 'package:myown_amazone_clone/pages/cart_screen.dart';
 import 'package:myown_amazone_clone/pages/home_page.dart';
 
 const double kAppBarHeight = 80;
@@ -22,9 +23,7 @@ const List<String> categoriesList = [
 const List<Widget> screens = [
   HomeScreen(),
   AccountScreen(),
-  Center(
-    child: Text('Cart Screen'),
-  ),
+  CartScreen(),
   Center(
     child: Text('More Screen'),
   )
