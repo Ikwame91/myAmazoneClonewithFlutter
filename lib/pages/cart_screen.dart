@@ -35,6 +35,8 @@ class _CartScreenState extends State<CartScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -45,12 +47,14 @@ class _CartScreenState extends State<CartScreen> {
               child: SingleChildScrollView(
                 controller: controller,
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     // UserDetails(
                     //   offset: 0,
                     //   userDetails: UserDetailsModel(name: 'Nkay', address: 'KNUST'),
                     // ),
                     Column(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         CartScreenWidget(),
                         Row(
@@ -69,7 +73,12 @@ class _CartScreenState extends State<CartScreen> {
                             ),
                           ],
                         ),
-                        CartScreenSecondWidget(),
+                        ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: 2,
+                            itemBuilder: ((context, index) {
+                              return CartScreenSecondWidget();
+                            })),
                       ],
                     ),
                   ],
