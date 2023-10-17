@@ -1,11 +1,13 @@
 // ignore_for_file: prefer_const_constructors, library_private_types_in_public_api, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:myown_amazone_clone/model/product_model.dart';
 import 'package:myown_amazone_clone/widgets/customButton.dart';
 import 'package:myown_amazone_clone/widgets/custom_cost_widget.dart';
 
 class CartScreenSecondWidget extends StatelessWidget {
-  const CartScreenSecondWidget({super.key});
+  const CartScreenSecondWidget({super.key, required this.product});
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -48,16 +50,14 @@ class CartScreenSecondWidget extends StatelessWidget {
                         width: containerwidth * 0.8,
                         child: Align(
                             alignment: Alignment.topLeft,
-                            child:
-                                Image.asset('assets/images/ClassicCamera.png')),
+                            child: Image.asset(product.url)),
                       ),
                       Align(
                         alignment: Alignment.topCenter,
                         child: ProductViewInfo(
-                            productName:
-                                'Laundry Detergent Dispenser 3 piece, 780z',
-                            cost: 25,
-                            otherInfo: '*black'),
+                            productName: product.productName,
+                            cost: 45,
+                            otherInfo: product.seller),
                       )
                     ],
                   ),
@@ -100,14 +100,15 @@ class CartScreenSecondWidget extends StatelessWidget {
                             )),
                       ),
                       CustomButton(
-                          onPressed: () {},
-                          color: Colors.white,
-                          width: 100,
-                          height: 35,
-                          child: Text(
-                            'Save for later',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          )),
+                        onPressed: () {},
+                        color: Colors.white,
+                        width: 100,
+                        height: 35,
+                        child: Text(
+                          'Save for later',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ],
                   ),
                 ),

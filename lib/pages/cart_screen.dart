@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
+import 'package:myown_amazone_clone/model/product_model.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
 import 'package:myown_amazone_clone/widgets/cart_screen_appbar.dart';
 import 'package:myown_amazone_clone/widgets/cart_screen_secondwidget.dart';
@@ -64,7 +65,18 @@ class _CartScreenState extends State<CartScreen> {
             SliverList(
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
-                  return CartScreenSecondWidget();
+                  return CartScreenSecondWidget(
+                    product: ProductModel(
+                        url: 'assets/images/ClassicCamera.png',
+                        productName:
+                            'Laundry Detergent Dispenser 3 piece, 780z',
+                        cost: 5,
+                        discount: 45,
+                        seller: '*: blackish white',
+                        sellerUid: 'sellerUid',
+                        rating: 6,
+                        noOfRating: 4),
+                  );
                 },
                 childCount: 5,
               ),

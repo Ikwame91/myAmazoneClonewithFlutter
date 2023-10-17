@@ -65,11 +65,11 @@ class _MoreScreenDropDownState extends State<MoreScreenDropDown> {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Colors.green,
                     blurRadius: 10.0,
@@ -83,7 +83,10 @@ class _MoreScreenDropDownState extends State<MoreScreenDropDown> {
                   items: shopByCategoryItems.map((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
-                      child: Text(value),
+                      child: Text(value,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                          )),
                     );
                   }).toList(),
                   onChanged: (String? newValue) {
