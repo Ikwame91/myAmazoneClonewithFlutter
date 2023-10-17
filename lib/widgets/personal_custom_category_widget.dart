@@ -24,7 +24,10 @@ class PersonalCategoryWidget extends StatelessWidget {
             Image.network(categoryLogos[index]),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(categoriesList[index]),
+              child: Text(
+                categoriesList[index],
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
             )
           ],
         ),

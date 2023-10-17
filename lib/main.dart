@@ -5,7 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:myown_amazone_clone/firebase_options.dart';
-import 'package:myown_amazone_clone/layouts_for%20screens/screen_layout.dart';
+import 'package:myown_amazone_clone/pages/results_screen.dart';
 import 'package:myown_amazone_clone/pages/sign_in_screen.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
 
@@ -41,9 +41,9 @@ class AmazonClone extends StatelessWidget {
     return MaterialApp(
         title: 'Amazon Clone',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData.light().copyWith(
-          scaffoldBackgroundColor: backgroundColor,
-        ),
+        theme: ThemeData.dark().copyWith(
+            scaffoldBackgroundColor: backgroundColor,
+            textTheme: ThemeData.dark().textTheme),
         //A stream builder is a widget that constantly listens to streams or data changes and rebuilds whats in the builder
         home: StreamBuilder(
             stream: FirebaseAuth.instance.authStateChanges(),
@@ -58,7 +58,8 @@ class AmazonClone extends StatelessWidget {
                 );
                 //user has signed in at some point in time before and credentials is still there
               } else if (user.hasData) {
-                return ScreenLayout();
+                //return ScreenLayout();
+                return ResultsScreen(query: 'myself');
               } else {
                 //if user hasn't then we show sign in screen
                 return SignInScreen();
