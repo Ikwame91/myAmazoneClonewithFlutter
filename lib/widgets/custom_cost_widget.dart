@@ -16,6 +16,7 @@ class CustomCostWidget extends StatelessWidget {
           child: Text(
             '\$',
             style: TextStyle(
+              color: color,
               fontWeight: FontWeight.bold,
               fontSize: 17,
             ),
@@ -26,7 +27,7 @@ class CustomCostWidget extends StatelessWidget {
           style: TextStyle(
             color: color,
             fontWeight: FontWeight.bold,
-            fontSize: 27,
+            fontSize: 22,
           ),
         ),
         Transform.translate(
