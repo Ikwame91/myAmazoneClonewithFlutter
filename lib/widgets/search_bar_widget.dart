@@ -2,6 +2,7 @@ import 'dart:ui' as ui; // Import 'dart:ui' with a different name.
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:myown_amazone_clone/pages/results_screen.dart';
 import 'package:myown_amazone_clone/pages/search_screen.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
 import 'package:myown_amazone_clone/utils/constants.dart';
@@ -77,6 +78,14 @@ class SearchBarWidget extends StatelessWidget implements PreferredSizeWidget {
                   )
                 ]),
                 child: TextField(
+                  onSubmitted: (String query) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ResultsScreen(query: query),
+                      ),
+                    );
+                  },
                   readOnly: isReadOnly,
                   onTap: () {
                     if (isReadOnly) {
