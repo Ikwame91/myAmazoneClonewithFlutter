@@ -74,6 +74,13 @@ List<String> keysOfRating = [
   "Excellent"
 ];
 
+List<String> scrollImage = [
+  'assets/images/pexels.jpg',
+  'assets/images/ClassicCamera.png',
+  'assets/images/camera.jpg',
+  'assets/images/laptop1.jpg',
+  'assets/images/laptop2.jpg',
+];
 List<String> shopByCategoryItems = [
   'Shop by Department',
   'Arts & Crafts',

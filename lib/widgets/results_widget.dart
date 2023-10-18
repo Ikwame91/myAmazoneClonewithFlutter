@@ -37,7 +37,7 @@ class ResultsWidget extends StatelessWidget {
                 Flexible(child: RatingStar(rating: product.rating)),
                 Text(
                   product.noOfRating.toString(),
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: activeCyanColor, fontWeight: FontWeight.bold),
                 )
               ],

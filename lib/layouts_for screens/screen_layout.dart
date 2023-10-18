@@ -32,54 +32,60 @@ class _ScreenLayoutState extends State<ScreenLayout> {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 4,
-      child: Scaffold(
-          //Page view is a widget that allows us to pass a lot of
-          //screens as possible for the children while remaining in the parent page
-          body: PageView(
-              //controller Allows us to change the screen of the page view
-              controller: pageController,
-              children: screens),
-          bottomNavigationBar: Container(
-            decoration: BoxDecoration(
-                border: Border(
-                    top: BorderSide(
-              color: Colors.grey[400]!,
-              width: 2,
-            ))),
-            child: TabBar(
-                indicator: const BoxDecoration(
-                    border: Border(
-                  top: BorderSide(color: activeCyanColor, width: 4),
-                )),
-                onTap: changePage,
-                indicatorSize: TabBarIndicatorSize.label,
-                tabs: [
-                  Tab(
-                    child: Icon(
-                      Icons.home_outlined,
-                      color: currentpage == 0 ? activeCyanColor : Colors.black,
+      child: SafeArea(
+        child: Scaffold(
+            //Page view is a widget that allows us to pass a lot of
+            //screens as possible for the children while remaining in the parent page
+            body: PageView(
+                //controller Allows us to change the screen of the page view
+                controller: pageController,
+                children: screens),
+            bottomNavigationBar: Container(
+              decoration: BoxDecoration(
+                  border: Border(
+                      top: BorderSide(
+                color: Colors.grey[400]!,
+                width: 2,
+              ))),
+              child: TabBar(
+                  indicator: const BoxDecoration(
+                      border: Border(
+                    top: BorderSide(color: activeCyanColor, width: 4),
+                  )),
+                  onTap: changePage,
+                  indicatorSize: TabBarIndicatorSize.label,
+                  tabs: [
+                    Tab(
+                      child: Icon(
+                        Icons.home_outlined,
+                        color:
+                            currentpage == 0 ? activeCyanColor : Colors.black,
+                      ),
                     ),
-                  ),
-                  Tab(
-                    child: Icon(
-                      Icons.account_circle_outlined,
-                      color: currentpage == 1 ? activeCyanColor : Colors.black,
+                    Tab(
+                      child: Icon(
+                        Icons.account_circle_outlined,
+                        color:
+                            currentpage == 1 ? activeCyanColor : Colors.black,
+                      ),
                     ),
-                  ),
-                  Tab(
-                    child: Icon(
-                      Icons.add_shopping_cart_outlined,
-                      color: currentpage == 2 ? activeCyanColor : Colors.black,
+                    Tab(
+                      child: Icon(
+                        Icons.add_shopping_cart_outlined,
+                        color:
+                            currentpage == 2 ? activeCyanColor : Colors.black,
+                      ),
                     ),
-                  ),
-                  Tab(
-                    child: Icon(
-                      Icons.menu,
-                      color: currentpage == 3 ? activeCyanColor : Colors.black,
+                    Tab(
+                      child: Icon(
+                        Icons.menu,
+                        color:
+                            currentpage == 3 ? activeCyanColor : Colors.black,
+                      ),
                     ),
-                  ),
-                ]),
-          )),
+                  ]),
+            )),
+      ),
     );
   }
 }

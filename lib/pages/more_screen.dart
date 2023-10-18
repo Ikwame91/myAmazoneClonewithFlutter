@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:myown_amazone_clone/utils/constants.dart';
 import 'package:myown_amazone_clone/widgets/cart_screen_appbar.dart';
@@ -18,35 +16,33 @@ class _MoreScreenState extends State<MoreScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CartScreenAppbar(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            MoreScreenWidget(),
-            Divider(
-              height: 10,
-              thickness: 4,
-              color: Colors.grey,
+      appBar: const CartScreenAppbar(),
+      body: ListView(
+        children: [
+          const MoreScreenWidget(),
+          const Divider(
+            height: 10,
+            thickness: 4,
+            color: Colors.grey,
+          ),
+          const MoreScreenDropDown(),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: SizedBox(
+              height: 200,
+              child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      childAspectRatio: 2.2 / 3.5,
+                      mainAxisSpacing: 20,
+                      crossAxisSpacing: 15),
+                  itemCount: categoriesList.length,
+                  itemBuilder: (context, index) {
+                    return PersonalCategoryWidget(index: index);
+                  }),
             ),
-            MoreScreenDropDown(),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: SizedBox(
-                height: 200,
-                child: GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3,
-                        childAspectRatio: 2.2 / 3.5,
-                        mainAxisSpacing: 20,
-                        crossAxisSpacing: 15),
-                    itemCount: categoriesList.length,
-                    itemBuilder: (context, index) {
-                      return PersonalCategoryWidget(index: index);
-                    }),
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
