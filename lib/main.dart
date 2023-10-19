@@ -5,12 +5,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:myown_amazone_clone/firebase_options.dart';
-import 'package:myown_amazone_clone/model/mini_description.dart';
-import 'package:myown_amazone_clone/pages/product_screen.dart';
+import 'package:myown_amazone_clone/layouts_for%20screens/screen_layout.dart';
 import 'package:myown_amazone_clone/pages/sign_in_screen.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
-
-import 'model/product_model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -65,21 +62,7 @@ class AmazonClone extends StatelessWidget {
                 );
                 //user has signed in at some point in time before and credentials is still there
               } else if (user.hasData) {
-                // return ScreenLayout();
-                return ProductScreen(
-                    miniDescription: MiniDescription(
-                        color: 'color :',
-                        product: 'Laundry Detergent Dispener'),
-                    productModel: ProductModel(
-                        url: 'assets/images/pexels.jpg',
-                        productName:
-                            'Laundry Detergent Dispenser 3 piece, 780z',
-                        cost: 345,
-                        discount: 45,
-                        seller: 'Magnom terraclobo milan transcode  white',
-                        sellerUid: 'sellerUid',
-                        rating: 3,
-                        noOfRating: 3));
+                return ScreenLayout();
               } else {
                 //if user hasn't then we show sign in screen
                 return SignInScreen();
