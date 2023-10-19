@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:myown_amazone_clone/model/product_model.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
 import 'package:myown_amazone_clone/utils/constants.dart';
-import 'package:myown_amazone_clone/widgets/custom_cost_widget.dart';
 import 'package:myown_amazone_clone/widgets/custom_designed_container.dart';
 import 'package:myown_amazone_clone/widgets/rating_star_widget.dart';
 import 'package:myown_amazone_clone/widgets/search_bar_widget.dart';
@@ -103,14 +102,32 @@ class _ProductScreenState extends State<ProductScreen> {
                       },
                       itemCount: scrollImage.length),
                 ),
+                // Padding(
+                //   padding: const EdgeInsets.only(top: 15, bottom: 15),
+                //   child: CustomCostWidget(
+                //       color: activeCyanColor, cost: widget.productModel.cost),
+                // ),
+
                 Padding(
-                  padding: const EdgeInsets.only(top: 15),
-                  child: Center(
-                    child: CustomCostWidget(
-                        color: Colors.red, cost: widget.productModel.cost),
+                  padding: const EdgeInsets.only(top: 40),
+                  child: Divider(
+                    height: 3,
+                    thickness: 3,
+                    color: Colors.grey,
                   ),
                 ),
-                CustomDesignedContainer(),
+                SizedBox(
+                  height: 300,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 7,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: CustomDesignedContainer(),
+                        );
+                      }),
+                )
               ],
             ),
           ),
