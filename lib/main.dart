@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:myown_amazone_clone/firebase_options.dart';
+import 'package:myown_amazone_clone/model/mini_description.dart';
 import 'package:myown_amazone_clone/pages/product_screen.dart';
 import 'package:myown_amazone_clone/pages/sign_in_screen.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
@@ -66,11 +67,14 @@ class AmazonClone extends StatelessWidget {
               } else if (user.hasData) {
                 // return ScreenLayout();
                 return ProductScreen(
+                    miniDescription: MiniDescription(
+                        color: 'color :',
+                        product: 'Laundry Detergent Dispener'),
                     productModel: ProductModel(
                         url: 'assets/images/pexels.jpg',
                         productName:
                             'Laundry Detergent Dispenser 3 piece, 780z',
-                        cost: 76465,
+                        cost: 345,
                         discount: 45,
                         seller: 'Magnom terraclobo milan transcode  white',
                         sellerUid: 'sellerUid',

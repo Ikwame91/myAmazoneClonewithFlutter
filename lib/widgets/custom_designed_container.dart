@@ -9,7 +9,9 @@ class CustomDesignedContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.only(top: 15, left: 5),
+      padding: const EdgeInsets.only(
+        top: 15,
+      ),
       child: Container(
         height: screenSize.height * 0.32,
         width: screenSize.width / 2.1,
