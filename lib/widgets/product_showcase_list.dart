@@ -44,27 +44,5 @@ class ProductShowCaseListView extends StatelessWidget {
         )
       ],
     );
-    // SizedBox(
-    //   height: defaultHeight,
-    //   child: GridView.builder(
-    //       physics: const NeverScrollableScrollPhysics(),
-    //       itemCount: 4,
-    //       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-    //           crossAxisCount: 2),
-    //       itemBuilder: (context, index) {
-    //         return Padding(
-    //           padding: const EdgeInsets.all(5.0),
-    //           child: Container(
-    //             height: defaultHeight,
-    //             decoration: BoxDecoration(
-    //                 color: Colors.grey[400],
-    //                 borderRadius: BorderRadius.circular(15),
-    //                 image: const DecorationImage(
-    //                   image: AssetImage('assets/images/cameraimage.png'),
-    //                 )),
-    //           ),
-    //         );
-    //       }),
-    // );
   }
 }
