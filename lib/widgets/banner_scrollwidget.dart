@@ -39,17 +39,6 @@ class _BannerScrollWidgetState extends State<BannerScrollWidget> {
                 ),
                 Positioned(
                   bottom: 0,
-
-//  Container(
-//                 decoration: BoxDecoration(boxShadow: [
-//                   BoxShadow(
-//                     color: Colors.black.withOpacity(0.6),
-//                     blurRadius: 8,
-//                     spreadRadius: 1,
-//                     offset: const Offset(0, 5),
-//                   )
-//                 ]),
-
                   child: Container(
                     width: screenSize.width,
                     height: screenSize.height / 8,
@@ -60,19 +49,7 @@ class _BannerScrollWidgetState extends State<BannerScrollWidget> {
                         spreadRadius: 1,
                         offset: const Offset(0, 120),
                       )
-                    ]
-
-                        //This shows a gradient shadow on the image at the bottom center and top left
-                        // gradient: LinearGradient(
-                        //   begin: Alignment.bottomCenter, // Updated
-                        //   end: Alignment.topCenter, // Updated
-                        //   colors: [
-                        //     backgroundColor
-                        //         .withOpacity(0.5), // Adjust opacity as needed
-                        //     backgroundColor.withOpacity(0),
-                        //   ],
-                        // ),
-                        ),
+                    ]),
                   ),
                 )
               ],
@@ -81,11 +58,6 @@ class _BannerScrollWidgetState extends State<BannerScrollWidget> {
               height: bannerContainerHeight,
               width: screenSize.width,
               color: backgroundColor,
-
-              //Renderflex error was as a result of not adding a single child scrollview to the row
-              //  child: SingleChildScrollView(
-              //   scrollDirection: Axis.horizontal,
-              //   child: Row(
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -168,3 +140,32 @@ class _BannerScrollWidgetState extends State<BannerScrollWidget> {
         ));
   }
 }
+//  Container(
+//                 decoration: BoxDecoration(boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.black.withOpacity(0.6),
+//                     blurRadius: 8,
+//                     spreadRadius: 1,
+//                     offset: const Offset(0, 5),
+//                   )
+//                 ]),
+
+
+
+
+                        //This shows a gradient shadow on the image at the bottom center and top left
+                        // gradient: LinearGradient(
+                        //   begin: Alignment.bottomCenter, // Updated
+                        //   end: Alignment.topCenter, // Updated
+                        //   colors: [
+                        //     backgroundColor
+                        //         .withOpacity(0.5), // Adjust opacity as needed
+                        //     backgroundColor.withOpacity(0),
+                        //   ],
+                        // ),
+
+                        
+              //Renderflex error was as a result of not adding a single child scrollview to the row
+              //  child: SingleChildScrollView(
+              //   scrollDirection: Axis.horizontal,
+              //   child: Row(
