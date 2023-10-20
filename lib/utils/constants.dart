@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:myown_amazone_clone/model/product_model.dart';
 import 'package:myown_amazone_clone/pages/Account_screen.dart';
 import 'package:myown_amazone_clone/pages/cart_screen.dart';
 import 'package:myown_amazone_clone/pages/home_page.dart';
 import 'package:myown_amazone_clone/pages/more_screen.dart';
+import 'package:myown_amazone_clone/widgets/product_showcase_list.dart';
 
 const double kAppBarHeight = 80;
 
@@ -110,4 +112,19 @@ List<String> shopByCategoryItems = [
   'Toys & Games',
   'Video Games',
   'Deals',
+];
+
+List<Widget> productWidget = [
+  ProductShowCaseListView(
+    title: 'Jenzin',
+    productModel: ProductModel(
+        url: 'assets/images/pexels.jpg',
+        productName: 'Laundry Detergent Dispenser 3 piece, 780z',
+        cost: 345,
+        discount: 45,
+        seller: 'Magnom terraclobo milan transcode  white',
+        sellerUid: 'sellerUid',
+        rating: 3,
+        noOfRating: 3),
+  )
 ];

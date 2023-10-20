@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:myown_amazone_clone/model/product_model.dart';
 import 'package:myown_amazone_clone/model/user_detai_model.dart';
 import 'package:myown_amazone_clone/utils/constants.dart';
 import 'package:myown_amazone_clone/widgets/banner_scrollwidget.dart';
@@ -73,7 +74,32 @@ class _HomeScreenState extends State<HomeScreen> {
                       SizedBox(
                         height: 20,
                       ),
-                      ProductShowCaseListView()
+                      ProductShowCaseListView(
+                        title: 'Up to 70% more',
+                        productModel: ProductModel(
+                            url: 'assets/images/pexels.jpg',
+                            productName:
+                                'Laundry Detergent Dispenser 3 piece, 780z',
+                            cost: 345,
+                            discount: 45,
+                            seller: 'Magnom terraclobo milan transcode  white',
+                            sellerUid: 'sellerUid',
+                            rating: 3,
+                            noOfRating: 3),
+                      ),
+                      ProductShowCaseListView(
+                        title: '70% more',
+                        productModel: ProductModel(
+                            url: 'assets/images/pexels.jpg',
+                            productName:
+                                'Laundry Detergent Dispenser 3 piece, 780z',
+                            cost: 345,
+                            discount: 45,
+                            seller: 'Magnom terraclobo milan transcode  white',
+                            sellerUid: 'sellerUid',
+                            rating: 3,
+                            noOfRating: 3),
+                      ),
                     ],
                   ),
                 ],
