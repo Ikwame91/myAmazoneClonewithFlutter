@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:ui' as ui; // Import 'dart:ui' with a different name.
+
 import 'package:flutter/material.dart';
 import 'package:myown_amazone_clone/model/user_detai_model.dart';
 import 'package:myown_amazone_clone/utils/constants.dart';
@@ -44,6 +46,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ui.Size screenSize = MediaQuery.of(context).size;
+    double defaultHeight = screenSize.height * 0.5;
+
     return SafeArea(
       child: GestureDetector(
         // Wrap the entire screen with GestureDetector
@@ -67,89 +72,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     FirstCategoryHorizontalScroll(),
                     BannerScrollWidget(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 10, top: 15),
-                          child: Text(
-                            'Deals related to items in your cart',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w900,
-                                color: Colors.black,
-                                fontSize: 20),
-                          ),
-                        ),
-                      ],
-                    ),
-                    ProductShowCaseListView(children: []),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 10, top: 15),
-                          child: Text(
-                            'Deals related to items in your cart',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w900,
-                                color: Colors.black,
-                                fontSize: 20),
-                          ),
-                        ),
-                      ],
-                    ),
-                    ProductShowCaseListView(children: []),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 10, top: 15),
-                          child: Text(
-                            'Deals related to items in your cart',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w900,
-                                color: Colors.black,
-                                fontSize: 20),
-                          ),
-                        ),
-                      ],
-                    ),
-                    ProductShowCaseListView(children: []),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 10, top: 15),
-                          child: Text(
-                            'Deals related to items in your cart',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w900,
-                                color: Colors.black,
-                                fontSize: 20),
-                          ),
-                        ),
-                      ],
-                    ),
-                    ProductShowCaseListView(children: []),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 10, top: 15),
-                          child: Text(
-                            'Deals related to items in your cart',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w900,
-                                color: Colors.black,
-                                fontSize: 20),
-                          ),
-                        ),
-                      ],
-                    ),
-                    ProductShowCaseListView(children: []),
                     SizedBox(
                       height: 20,
                     ),
+                    GridView.builder(
+                        itemCount: 4,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2),
+                        itemBuilder: (context, index) {
+                          return ProductShowCaseListView();
+                        })
                   ],
                 ),
               ),
