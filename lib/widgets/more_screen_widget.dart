@@ -60,22 +60,54 @@ class MoreScreenWidget extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(13.0),
+                  child: Expanded(
+                    child: Column(
+                      children: [
+                        CustomButton(
+                          onPressed: () {},
+                          color: activeCyanColor,
+                          width: 110,
+                          height: 110,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/handshake.jpg'),
+                                    fit: BoxFit.cover),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Text(
+                          'data',
+                          style: GoogleFonts.aleo(
+                            textStyle: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 22,
+                                letterSpacing: 0.3,
+                                color: Colors.black),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
                   child: Column(
                     children: [
                       CustomButton(
                         onPressed: () {},
-                        color: activeCyanColor,
+                        color: Color(0xFF7BC0F8),
                         width: 110,
                         height: 110,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(15),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image:
-                                      AssetImage('assets/images/handshake.jpg'),
-                                  fit: BoxFit.cover),
-                            ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                                image: AssetImage('assets/images/location.jpg'),
+                                fit: BoxFit.cover),
                           ),
                         ),
                       ),
@@ -91,34 +123,6 @@ class MoreScreenWidget extends StatelessWidget {
                       )
                     ],
                   ),
-                ),
-                Column(
-                  children: [
-                    CustomButton(
-                      onPressed: () {},
-                      color: Color(0xFF7BC0F8),
-                      width: 110,
-                      height: 110,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          image: DecorationImage(
-                              image: AssetImage('assets/images/location.jpg'),
-                              fit: BoxFit.cover),
-                        ),
-                      ),
-                    ),
-                    Text(
-                      'data',
-                      style: GoogleFonts.aleo(
-                        textStyle: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 22,
-                            letterSpacing: 0.3,
-                            color: Colors.black),
-                      ),
-                    )
-                  ],
                 )
               ],
             ),

@@ -28,7 +28,7 @@ class FirstContainerOfCartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: screenSize.height / 3.5,
+      height: screenSize.height / 3,
       width: screenSize.width,
       decoration: BoxDecoration(
         color: Colors.white,

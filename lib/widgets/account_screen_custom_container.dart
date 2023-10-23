@@ -26,7 +26,7 @@ class CustomContainer extends StatelessWidget {
     Size screenSize = MediaQuery.of(context).size;
     return Container(
       width: screenSize.width,
-      height: screenSize.height / 3.8,
+      height: screenSize.height / 3.2,
       decoration: const BoxDecoration(
         color: Colors.white,
         border: Border(

@@ -19,7 +19,7 @@ class CartScreenSecondWidget extends StatelessWidget {
       child: SingleChildScrollView(
         child: Container(
           width: screenSize.width,
-          height: screenSize.height * 0.35,
+          height: screenSize.height * 0.38,
           decoration: BoxDecoration(
             color: Colors.grey[200],
             borderRadius: BorderRadius.circular(10),
@@ -88,7 +88,7 @@ class CartScreenSecondWidget extends StatelessWidget {
                           height: 30,
                           child: Icon(Icons.add)),
                       Padding(
-                        padding: const EdgeInsets.only(left: 15, right: 15),
+                        padding: const EdgeInsets.only(left: 15, right: 12),
                         child: CustomButton(
                             onPressed: () {},
                             color: Colors.white,
@@ -99,14 +99,16 @@ class CartScreenSecondWidget extends StatelessWidget {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             )),
                       ),
-                      CustomButton(
-                        onPressed: () {},
-                        color: Colors.white,
-                        width: 100,
-                        height: 35,
-                        child: Text(
-                          'Save for later',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                      Expanded(
+                        child: CustomButton(
+                          onPressed: () {},
+                          color: Colors.white,
+                          width: 100,
+                          height: 35,
+                          child: Text(
+                            'Save for later',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ],
