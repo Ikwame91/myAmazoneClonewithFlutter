@@ -1,11 +1,14 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_local_variable
 
 import 'package:flutter/material.dart';
+import 'package:myown_amazone_clone/model/user_detai_model.dart';
+import 'package:myown_amazone_clone/providers/user_provider.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
 import 'package:myown_amazone_clone/utils/constants.dart';
 import 'package:myown_amazone_clone/widgets/account_screen_buttons.dart';
 import 'package:myown_amazone_clone/widgets/account_screen_custom_container.dart';
 import 'package:myown_amazone_clone/widgets/accountscreenappbar.dart';
+import 'package:provider/provider.dart';
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
@@ -149,6 +152,8 @@ class IntroductoryWidgetAccountScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    UserDetailsModel userDetailsModel =
+        Provider.of<UserDetailsProvider>(context).userDetails;
     return Container(
       height: kAppBarHeight,
       decoration: BoxDecoration(
@@ -178,7 +183,7 @@ class IntroductoryWidgetAccountScreen extends StatelessWidget {
                   ),
                 ),
                 TextSpan(
-                  text: 'Nkay',
+                  text: userDetailsModel.name,
                   style: TextStyle(
                       color: Colors.grey[800],
                       fontSize: 30,

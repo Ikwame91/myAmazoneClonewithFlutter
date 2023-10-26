@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:myown_amazone_clone/providers/user_provider.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
 import 'package:myown_amazone_clone/utils/constants.dart';
+import 'package:provider/provider.dart';
 
 class ScreenLayout extends StatefulWidget {
   const ScreenLayout({super.key});
@@ -30,6 +32,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
 
   @override
   Widget build(BuildContext context) {
+    Provider.of<UserDetailsProvider>(context).getData();
     return DefaultTabController(
       length: 4,
       child: SafeArea(

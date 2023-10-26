@@ -27,7 +27,7 @@ class CloudFirestoreClass {
         .get();
 
     UserDetailsModel userDetailsModel =
-        UserDetailsModel.fromJson(snap.data() as dynamic);
+        UserDetailsModel.fromMap(snap.data() as dynamic);
 
     return userDetailsModel;
   }

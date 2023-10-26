@@ -6,6 +6,7 @@ import 'package:myown_amazone_clone/utils/constants.dart';
 import 'package:myown_amazone_clone/widgets/cart_screen_appbar.dart';
 import 'package:myown_amazone_clone/widgets/cart_screen_secondwidget.dart';
 import 'package:myown_amazone_clone/widgets/cart_screen_widget.dart';
+import 'package:myown_amazone_clone/widgets/user_details.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -68,6 +69,9 @@ class _CartScreenState extends State<CartScreen> {
                 ),
               ],
             ),
+            UserDetails(
+              offset: 0,
+            )
           ],
         ),
       ),

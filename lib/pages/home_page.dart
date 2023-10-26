@@ -5,6 +5,7 @@ import 'package:myown_amazone_clone/utils/constants.dart';
 import 'package:myown_amazone_clone/widgets/banner_scrollwidget.dart';
 import 'package:myown_amazone_clone/widgets/categories1_widget.dart';
 import 'package:myown_amazone_clone/widgets/search_bar_widget.dart';
+import 'package:myown_amazone_clone/widgets/user_details.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -77,6 +78,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
+              UserDetails(
+                offset: 0,
+              )
             ],
           ),
         ),
