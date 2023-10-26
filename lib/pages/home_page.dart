@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:myown_amazone_clone/utils/constants.dart';
 import 'package:myown_amazone_clone/widgets/banner_scrollwidget.dart';
-import 'package:myown_amazone_clone/widgets/categories1_widget.dart';
 import 'package:myown_amazone_clone/widgets/search_bar_widget.dart';
 import 'package:myown_amazone_clone/widgets/user_details.dart';
 
@@ -66,7 +65,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       SizedBox(
                         height: kAppBarHeight / 2,
                       ),
-                      FirstCategoryHorizontalScroll(),
                       BannerScrollWidget(),
                       SizedBox(
                         height: 20,

@@ -18,11 +18,11 @@ class _BannerScrollWidgetState extends State<BannerScrollWidget> {
   Widget build(BuildContext context) {
     ui.Size screenSize = MediaQuery.of(context).size;
 
-    double bannerContainerHeight = 200;
+    double horizontalscrollbannerHeight = 200;
 
     return GestureDetector(
         onHorizontalDragEnd: (_) {
-          if (currentBanner == (largeBanners.length - 1)) {
+          if (currentBanner == (niceBanners.length - 1)) {
             currentBanner = -1;
           }
           setState(() {
@@ -33,9 +33,11 @@ class _BannerScrollWidgetState extends State<BannerScrollWidget> {
           children: [
             Stack(
               children: [
-                Image.network(
-                  largeBanners[currentBanner],
+                Image.asset(
+                  niceBanners[currentBanner],
                   width: double.infinity,
+                  height: 300,
+                  fit: BoxFit.fill,
                 ),
                 Positioned(
                   bottom: 0,
@@ -55,7 +57,7 @@ class _BannerScrollWidgetState extends State<BannerScrollWidget> {
               ],
             ),
             Container(
-              height: bannerContainerHeight,
+              height: horizontalscrollbannerHeight,
               width: screenSize.width,
               color: backgroundColor,
               child: SingleChildScrollView(
@@ -65,28 +67,28 @@ class _BannerScrollWidgetState extends State<BannerScrollWidget> {
                   children: [
                     getSmallAdWidget(
                       index: 0,
-                      side: bannerContainerHeight,
+                      side: horizontalscrollbannerHeight,
                     ),
                     const SizedBox(
                       width: 10,
                     ),
                     getSmallAdWidget(
                       index: 1,
-                      side: bannerContainerHeight,
+                      side: horizontalscrollbannerHeight,
                     ),
                     const SizedBox(
                       width: 10,
                     ),
                     getSmallAdWidget(
                       index: 2,
-                      side: bannerContainerHeight,
+                      side: horizontalscrollbannerHeight,
                     ),
                     const SizedBox(
                       width: 10,
                     ),
                     getSmallAdWidget(
                       index: 3,
-                      side: bannerContainerHeight,
+                      side: horizontalscrollbannerHeight,
                     ),
                     const SizedBox(
                       width: 10,
@@ -101,71 +103,48 @@ class _BannerScrollWidgetState extends State<BannerScrollWidget> {
 
   Widget getSmallAdWidget({required int index, required double side}) {
     return Container(
-        height: side,
-        width: side,
-        decoration: ShapeDecoration(
-          color: Colors.white,
-          shadows: [
-            BoxShadow(
-                color: Colors.black.withOpacity(0.3),
-                spreadRadius: 1,
-                blurRadius: 8),
-          ],
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+      height: side,
+      width: side,
+      decoration: ShapeDecoration(
+        color: Colors.white,
+        shadows: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.7),
+            spreadRadius: 4,
+            blurRadius: 8,
           ),
+        ],
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: FittedBox(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Image.network(
-                  bannerContainer[index],
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 10,
-                  ),
-                  child: Text(
-                    adItemNames[index],
-                    style: const TextStyle(
-                        fontSize: 13, fontWeight: FontWeight.w500),
-                  ),
-                )
-              ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Expanded(
+              child: Image.asset(
+                horizontalscrollbanner[index],
+                height: 100,
+                width: side,
+              ),
             ),
-          ),
-        ));
+            const Divider(
+              thickness: 1, // Adjust the thickness of the divider as needed
+              color: Colors.grey, // Change the divider color as needed
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Text(
+                adItemNames[index],
+                style:
+                    const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
-//  Container(
-//                 decoration: BoxDecoration(boxShadow: [
-//                   BoxShadow(
-//                     color: Colors.black.withOpacity(0.6),
-//                     blurRadius: 8,
-//                     spreadRadius: 1,
-//                     offset: const Offset(0, 5),
-//                   )
-//                 ]),
-
-
-
-
-                        //This shows a gradient shadow on the image at the bottom center and top left
-                        // gradient: LinearGradient(
-                        //   begin: Alignment.bottomCenter, // Updated
-                        //   end: Alignment.topCenter, // Updated
-                        //   colors: [
-                        //     backgroundColor
-                        //         .withOpacity(0.5), // Adjust opacity as needed
-                        //     backgroundColor.withOpacity(0),
-                        //   ],
-                        // ),
-
-                        
-              //Renderflex error was as a result of not adding a single child scrollview to the row
-              //  child: SingleChildScrollView(
-              //   scrollDirection: Axis.horizontal,
-              //   child: Row(

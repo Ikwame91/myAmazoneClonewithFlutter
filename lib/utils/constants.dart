@@ -41,13 +41,27 @@ const List<String> categoryLogos = [
   "https://m.media-amazon.com/images/I/11yLyO9f9ZL._SX90_SY90_.png",
   "https://m.media-amazon.com/images/I/11M0jYc-tRL._SX90_SY90_.png",
 ];
-
+const List<String> niceBanners = [
+  'assets/images/bridge.jpg',
+  'assets/images/christmas.jpg',
+  'assets/images/nature.jpg',
+  'assets/images/nicerr.jpg',
+  'assets/images/glassesandphone.jpg',
+];
 const List<String> largeBanners = [
   "https://m.media-amazon.com/images/I/51QISbJp5-L._SX3000_.jpg",
   "https://m.media-amazon.com/images/I/61jmYNrfVoL._SX3000_.jpg",
   "https://m.media-amazon.com/images/I/612a5cTzBiL._SX3000_.jpg",
   "https://m.media-amazon.com/images/I/61fiSvze0eL._SX3000_.jpg",
   "https://m.media-amazon.com/images/I/61PzxXMH-0L._SX3000_.jpg",
+];
+
+const List<String> horizontalscrollbanner = [
+  'assets/images/beautifulroom.jpg',
+  'assets/images/deadpool.jpg',
+  'assets/images/white.jpg',
+  'assets/images/planeBook.jpg',
+  // 'assets/images/white.jpg',
 ];
 
 const List<String> bannerContainer = [
@@ -58,10 +72,10 @@ const List<String> bannerContainer = [
 ];
 
 const List<String> adItemNames = [
-  "Amazon Pay",
-  "Recharge",
-  "Rewards",
-  "Pay Bills"
+  "Keep Shopping For Apartments",
+  "Keep Shopping For toys",
+  "Keep Shopping For Apartments",
+  "Keep Shopping For books",
 ];
 
 //Dont even attemp to scroll to the end of this manually lmao
