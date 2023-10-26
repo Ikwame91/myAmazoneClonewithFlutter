@@ -5,7 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:myown_amazone_clone/firebase_options.dart';
-import 'package:myown_amazone_clone/layouts_for%20screens/screen_layout.dart';
+import 'package:myown_amazone_clone/pages/proceed_to_checkout_screen.dart';
 import 'package:myown_amazone_clone/pages/sign_in_screen.dart';
 import 'package:myown_amazone_clone/providers/user_provider.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
@@ -66,7 +66,8 @@ class AmazonClone extends StatelessWidget {
                   );
                   //user has signed in at some point in time before and credentials is still there
                 } else if (user.hasData) {
-                  return ScreenLayout();
+                  //return ScreenLayout();
+                  return ProceedToCheckoutScreen();
                 } else {
                   //if user hasn't then we show sign in screen
                   return SignInScreen();

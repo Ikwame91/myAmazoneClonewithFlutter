@@ -61,6 +61,10 @@ const List<String> horizontalscrollbanner = [
   'assets/images/deadpool.jpg',
   'assets/images/white.jpg',
   'assets/images/planeBook.jpg',
+  'assets/images/christmas.jpg',
+  'assets/images/nature.jpg',
+  'assets/images/nicerr.jpg',
+  'assets/images/bridge.jpg',
   // 'assets/images/white.jpg',
 ];
 
@@ -73,9 +77,13 @@ const List<String> bannerContainer = [
 
 const List<String> adItemNames = [
   "Keep Shopping For Apartments",
-  "Keep Shopping For toys",
+  "Keep Shopping For toys for kids",
   "Keep Shopping For Apartments",
   "Keep Shopping For books",
+  "Keep Shopping For Apartments",
+  "Keep Shopping For Apartments",
+  "Keep Shopping For Apartments",
+  "Keep Shopping For Apartments",
 ];
 
 //Dont even attemp to scroll to the end of this manually lmao

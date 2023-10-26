@@ -93,6 +93,27 @@ class _BannerScrollWidgetState extends State<BannerScrollWidget> {
                     const SizedBox(
                       width: 10,
                     ),
+                    getSmallAdWidget(
+                      index: 4,
+                      side: horizontalscrollbannerHeight,
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    getSmallAdWidget(
+                      index: 5,
+                      side: horizontalscrollbannerHeight,
+                    ),
+                    const SizedBox(
+                      width: 6,
+                    ),
+                    getSmallAdWidget(
+                      index: 7,
+                      side: horizontalscrollbannerHeight,
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
                   ],
                 ),
               ),
