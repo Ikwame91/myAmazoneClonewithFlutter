@@ -49,7 +49,7 @@ class ResultsScreen extends StatelessWidget {
                     itemCount: 15,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisSpacing: 15,
-                        childAspectRatio: 2.3 / 4,
+                        childAspectRatio: 2 / 4,
                         crossAxisCount: 3),
                     itemBuilder: (context, index) {
                       return ResultsWidget(

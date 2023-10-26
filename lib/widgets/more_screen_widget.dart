@@ -10,73 +10,42 @@ class MoreScreenWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Your Shortcuts',
-            style: GoogleFonts.aleo(
-              textStyle: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 22,
-                  letterSpacing: 0.3,
-                  color: Colors.black),
+    return GestureDetector(
+      onTap: () {},
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Your Shortcuts',
+              style: GoogleFonts.aleo(
+                textStyle: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 22,
+                    letterSpacing: 0.3,
+                    color: Colors.black),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  children: [
-                    CustomButton(
-                      onPressed: () {},
-                      color: Colors.red,
-                      width: 110,
-                      height: 110,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(
-                              image: AssetImage('assets/images/tesla.jpg'),
-                              fit: BoxFit.cover),
-                        ),
-                      ),
-                    ),
-                    Text(
-                      'data',
-                      style: GoogleFonts.aleo(
-                        textStyle: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 22,
-                            letterSpacing: 0.3,
-                            color: Colors.black),
-                      ),
-                    )
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(13.0),
-                  child: Expanded(
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Flexible(
                     child: Column(
                       children: [
                         CustomButton(
                           onPressed: () {},
-                          color: activeCyanColor,
-                          width: 110,
-                          height: 110,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(15),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/images/handshake.jpg'),
-                                    fit: BoxFit.cover),
-                              ),
+                          color: Colors.red,
+                          width: 100,
+                          height: 100,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(
+                                  image: AssetImage('assets/images/tesla.jpg'),
+                                  fit: BoxFit.cover),
                             ),
                           ),
                         ),
@@ -93,72 +62,109 @@ class MoreScreenWidget extends StatelessWidget {
                       ],
                     ),
                   ),
-                ),
-                Expanded(
-                  child: Column(
-                    children: [
-                      CustomButton(
-                        onPressed: () {},
-                        color: Color(0xFF7BC0F8),
-                        width: 110,
-                        height: 110,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
-                                image: AssetImage('assets/images/location.jpg'),
-                                fit: BoxFit.cover),
+                  Flexible(
+                    child: Padding(
+                      padding: const EdgeInsets.all(13.0),
+                      child: Column(
+                        children: [
+                          CustomButton(
+                            onPressed: () {},
+                            color: activeCyanColor,
+                            width: 100,
+                            height: 100,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(15),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          'assets/images/handshake.jpg'),
+                                      fit: BoxFit.cover),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                          Text(
+                            'data',
+                            style: GoogleFonts.aleo(
+                              textStyle: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 22,
+                                  letterSpacing: 0.3,
+                                  color: Colors.black),
+                            ),
+                          )
+                        ],
                       ),
-                      Text(
-                        'data',
-                        style: GoogleFonts.aleo(
-                          textStyle: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 22,
-                              letterSpacing: 0.3,
-                              color: Colors.black),
-                        ),
-                      )
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(13.0),
-            child: Column(
-              children: [
-                CustomButton(
-                  onPressed: () {},
-                  color: Colors.white,
-                  width: 110,
-                  height: 110,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      image: DecorationImage(
-                          image: AssetImage('assets/images/rename.jpg'),
-                          fit: BoxFit.cover),
                     ),
                   ),
-                ),
-                Text(
-                  'data',
-                  style: GoogleFonts.aleo(
-                    textStyle: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 22,
-                        letterSpacing: 0.3,
-                        color: Colors.black),
-                  ),
-                )
-              ],
+                  Flexible(
+                    child: Column(
+                      children: [
+                        CustomButton(
+                          onPressed: () {},
+                          color: Color(0xFF7BC0F8),
+                          width: 100,
+                          height: 100,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              image: DecorationImage(
+                                  image:
+                                      AssetImage('assets/images/location.jpg'),
+                                  fit: BoxFit.cover),
+                            ),
+                          ),
+                        ),
+                        Text(
+                          'hello',
+                          style: GoogleFonts.aleo(
+                            textStyle: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 22,
+                                letterSpacing: 0.3,
+                                color: Colors.black),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.all(13.0),
+              child: Column(
+                children: [
+                  CustomButton(
+                    onPressed: () {},
+                    color: Colors.white,
+                    width: 100,
+                    height: 100,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        image: DecorationImage(
+                            image: AssetImage('assets/images/rename.jpg'),
+                            fit: BoxFit.cover),
+                      ),
+                    ),
+                  ),
+                  Text(
+                    'data',
+                    style: GoogleFonts.aleo(
+                      textStyle: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 22,
+                          letterSpacing: 0.3,
+                          color: Colors.black),
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

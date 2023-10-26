@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myown_amazone_clone/pages/results_screen.dart';
 import 'package:myown_amazone_clone/utils/constants.dart';
 
 class FirstCategoryHorizontalScroll extends StatelessWidget {
@@ -15,7 +16,13 @@ class FirstCategoryHorizontalScroll extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            ResultsScreen(query: categoriesList[index])));
+              },
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: 5, horizontal: 10),

@@ -11,6 +11,7 @@ import 'package:myown_amazone_clone/widgets/customButton.dart';
 import 'package:myown_amazone_clone/widgets/custom_cost_widget.dart';
 import 'package:myown_amazone_clone/widgets/custom_designed_container.dart';
 import 'package:myown_amazone_clone/widgets/rating_star_widget.dart';
+import 'package:myown_amazone_clone/widgets/review_dialog.dart';
 import 'package:myown_amazone_clone/widgets/review_widget.dart';
 import 'package:myown_amazone_clone/widgets/search_bar_widget.dart';
 
@@ -252,6 +253,27 @@ class _ProductScreenState extends State<ProductScreen> {
                       height: 50,
                       child: Text(
                         'Buy Now',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 17),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 15),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: CustomButton(
+                      onPressed: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) => ReviewDialog());
+                      },
+                      color: Colors.white,
+                      width: screenSize.width / 1.4,
+                      height: 50,
+                      child: Text(
+                        'AddA Review For This Product',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 17),
                       ),

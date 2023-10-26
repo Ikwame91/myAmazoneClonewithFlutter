@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myown_amazone_clone/model/product_model.dart';
-import 'package:myown_amazone_clone/utils/color_themes.dart';
 import 'package:myown_amazone_clone/widgets/custom_cost_widget.dart';
 import 'package:myown_amazone_clone/widgets/rating_star_widget.dart';
 
@@ -35,11 +34,13 @@ class ResultsWidget extends StatelessWidget {
             child: Row(
               children: [
                 Flexible(child: RatingStar(rating: product.rating)),
-                Text(
-                  product.noOfRating.toString(),
-                  style: const TextStyle(
-                      color: activeCyanColor, fontWeight: FontWeight.bold),
-                )
+                // Expanded(
+                //   child: Text(
+                //     product.noOfRating.toString(),
+                //     style: const TextStyle(
+                //         color: activeCyanColor, fontWeight: FontWeight.bold),
+                //   ),
+                // )
               ],
             ),
           ),

@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:myown_amazone_clone/model/user_detai_model.dart';
+import 'package:myown_amazone_clone/providers/user_provider.dart';
 import 'package:myown_amazone_clone/utils/color_themes.dart';
 import 'package:myown_amazone_clone/utils/constants.dart';
+import 'package:provider/provider.dart';
 
 class UserDetails extends StatelessWidget {
-  const UserDetails(
-      {super.key, required this.offset, required this.userDetails});
+  const UserDetails({
+    super.key,
+    required this.offset,
+  });
   final double offset;
-  final UserDetailsModel userDetails;
+
   @override
   Widget build(BuildContext context) {
     Size screens = MediaQuery.of(context).size;
@@ -15,6 +19,8 @@ class UserDetails extends StatelessWidget {
     double top = -offset / 3;
     // Limit the top value to ensure it doesn't go beyond 0 (visible area)
     top = top < 0 ? top : 0;
+    UserDetailsModel userDetails =
+        Provider.of<UserDetailsProvider>(context).userDetails;
     return Positioned(
       top: top,
       child: Container(

@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, library_private_types_in_public_api, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:myown_amazone_clone/model/mini_description.dart';
 import 'package:myown_amazone_clone/model/product_model.dart';
+import 'package:myown_amazone_clone/pages/product_screen.dart';
 import 'package:myown_amazone_clone/widgets/customButton.dart';
 import 'package:myown_amazone_clone/widgets/custom_cost_widget.dart';
 
@@ -43,23 +45,35 @@ class CartScreenSecondWidget extends StatelessWidget {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        height: containerheight * 0.8,
-                        width: containerwidth * 0.8,
-                        child: Align(
-                            alignment: Alignment.topLeft,
-                            child: Image.asset(product.url)),
-                      ),
-                      Align(
-                        alignment: Alignment.topCenter,
-                        child: ProductViewInfo(
-                            productName: product.productName,
-                            cost: 45,
-                            otherInfo: product.seller),
-                      )
-                    ],
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProductScreen(
+                                  productModel: product,
+                                  miniDescription: MiniDescription(
+                                      color: 'Color :',
+                                      product: product.sellerUid))));
+                    },
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          height: containerheight * 0.8,
+                          width: containerwidth * 0.8,
+                          child: Align(
+                              alignment: Alignment.topLeft,
+                              child: Image.asset(product.url)),
+                        ),
+                        Align(
+                          alignment: Alignment.topCenter,
+                          child: ProductViewInfo(
+                              productName: product.productName,
+                              cost: 45,
+                              otherInfo: product.seller),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
